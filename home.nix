@@ -24,7 +24,7 @@ let
   };
 in
 {
-  # --- CRITICAL SYSTEM SETTINGS ---
+  
   home.username = "idk";
   home.homeDirectory = "/home/idk";
   home.stateVersion = "25.11";
@@ -41,7 +41,7 @@ in
     inputs.spicetify-nix.homeManagerModules.default
   ];
 
-  # 3. Spicetify Config (One Dark Vibe)
+  #  Spicetify Config 
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.lucid;
@@ -60,7 +60,7 @@ in
     ];
   };
 
-  # 4. Kitty Config (One Dark)
+  #  Kitty Config 
   programs.kitty = {
     enable = true;
     settings = {
@@ -93,7 +93,7 @@ in
     };
   };
 
-  # 5. Firefox Config
+  # Firefox Config
   programs.firefox = {
     enable = true;
     profiles.idk = {
@@ -113,7 +113,7 @@ in
     };
   };
 
-  # 6. Hyprland Settings
+  # Hyprland Settings
   wayland.windowManager.hyprland.settings = {
     general = {
       "col.active_border" = "rgba(61afefee) rgba(e06c75ee) 45deg";
@@ -135,7 +135,7 @@ in
     };
   };
 
-  # 7. VSCodium Config
+  #  VSCodium Config
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -159,7 +159,7 @@ in
     };
   };
 
-  # 8. Extra Clean Up (The tools that actually work)
+  
   home.packages = with pkgs; [
     nil
     nixpkgs-fmt
