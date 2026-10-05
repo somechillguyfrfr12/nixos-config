@@ -14,7 +14,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, spicetify-nix, ... }@inputs: {
-    # Match this to your 'hostname' (usually nixos)
+  
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
@@ -22,7 +22,7 @@
         home-manager.nixosModules.home-manager
         {
           home-manager.extraSpecialArgs = { inherit inputs; };
-          # Fixed your username here to 'idk'
+          
           home-manager.users.idk = import ./home.nix;
           home-manager.backupFileExtension = "backup";
         }
